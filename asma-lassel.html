@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Asma Lassel · Profile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root{ --bg:#0b1020; --paper:#0f1530; --muted:#94a3b8; --ink:#e2e8f0; --chip:#1f2a44; --stroke:#1d2542; }
+  body{
+    margin:0;
+    background:radial-gradient(900px 500px at -10% -10%, #1f2551 0%, transparent 55%), var(--bg);
+    color:var(--ink);
+    font-family:Inter, system-ui, Segoe UI, Arial;
+    display:flex;
+    align-items:center;     /* vertical centering */
+    justify-content:center; /* horizontal centering */
+    min-height:100vh;
+  }
+  a{color:#a5b4fc; text-decoration:none}
+  .wrap{
+    max-width:1050px;
+    width:90%;
+    background:var(--paper);
+    border:1px solid var(--stroke);
+    border-radius:18px;
+    padding:24px;
+    display:grid;
+    grid-template-columns:320px 1fr;
+    gap:24px;
+  }
+  @media (max-width:900px){ .wrap{grid-template-columns:1fr} }
+
+  .side{
+    background:var(--paper);
+    border-radius:18px;
+    padding:22px;
+    text-align:center;
+  }
+  .avatar{ width:120px; height:120px; border-radius:18px; overflow:hidden; background:#111; border:2px solid #2b3565; margin:auto }
+  .avatar img{ width:100%; height:100%; object-fit:cover }
+  .name{ font-size:26px; font-weight:800; margin:14px 0 4px }
+  .role{ color:var(--muted); margin-bottom:12px }
+  .chips{ display:flex; flex-wrap:wrap; justify-content:center; gap:8px }
+  .chip{ padding:8px 12px; font-size:13px; border-radius:999px; background:var(--chip); border:1px solid var(--stroke) }
+  .main{ display:grid; gap:18px; align-content:center }
+  .card{
+    background:var(--paper);
+    border:1px solid var(--stroke);
+    border-radius:18px;
+    padding:22px;
+  }
+  h2{ margin:0 0 10px; font-size:18px; letter-spacing:.3px }
+  .links{
+    margin-top:12px;
+  }
+  .links a{
+    display:inline-block;
+    border:1px solid var(--stroke);
+    background:#131b3a;
+    padding:10px 12px;
+    border-radius:10px;
+    margin:4px;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <aside class="side">
+      <div class="avatar"><img src="https://images.unsplash.com/photo-1544006659-f0b21884ce1d?q=80&w=400" alt="Firstname Lastname"></div>
+      <div class="name">Asma LASSEL</div>
+      <div class="role">AI Engineering and Data Science Student</div>
+      <div class="chips">
+        <span class="chip">C++</span>
+        <span class="chip">HTML/CSS</span>
+        <span class="chip">PHP</span>
+        <span class="chip">SQL</span>
+        <span class="chip">JavaScript</span>
+        <span class="chip">Git & GitHub</span>
+        <span class="chip">UI/UX design</span>
+        <span class="chip">Python</span>
+        <span class="chip">DSA</span>
+      </div>
+      <div class="links">
+        <a href="https://github.com/AsmaLassel" target="_blank" rel="noopener">GitHub ↗</a>
+        <a href="https://www.linkedin.com/in/asma-lassel" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a href="index.html">← Back to Team</a>
+      </div>
+    </aside>
+
+    <main class="main">
+      <section class="card">
+        <h2>About Me</h2>
+        <p>I am Asma Lassel, an AI Engineering and Data Science student at ENSIA. I am a dedicated and creative individual with a strong interest in data analysis, artificial intelligence, and the research behind technological discoveries. Alongside my technical pursuits, I enjoy design as a way to express my artistic side and maintain a balance between logic and creativity. My long-term goal is to combine my analytical and creative expertise to build innovative solutions that add real value to society.</p>
+      </section>
+
+      <section class="card">
+        <h2>Technical Skills</h2>
+        <ul>
+          <li><b>C++</b> – Strong foundation in object-oriented programming and algorithmic problem-solving.</li>
+          <li><b>Python</b> – Skilled in data analysis and AI-focused development.</li>
+          <li><b>JavaScript</b> – Experienced in creating dynamic, interactive web features.</li>
+          <li><b>HTML/CSS</b> – Proficient in building responsive and accessible front-end designs.</li>
+          <li><b>PHP</b> – Capable of developing and maintaining server-side web applications.</li>
+          <li><b>SQL</b> – Competent in database design, querying, and data manipulation.</li>
+          <li><b>UI/UX Design</b> – Focused on user-centered design principles and interface aesthetics.</li>
+          <li><b>DSA (Data Structures & Algorithms)</b> – Strong grasp of computational logic and performance optimization.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Current Projects</h2>
+        <ul>
+          <li><b>Software Engineering : </b>Private School Directory Management</li>
+          <li><b>Mobile Development : </b>Stores Management System</li>
+          <li><b>Data Mining : </b>The Application of Data Analysis on a real life problem</li>
+        </ul>
+      </section>
+      <section class="card">
+        <h2>Previous Projects</h2>
+        <ul>
+          <li><b>Artificial intelligence : </b>Warehouse Management System optimization</li>
+          <li><b>Web Development : </b>Athletia; a gym website for gym enthusiasts</li>
+        </ul>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
