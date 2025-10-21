@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Team Portfolio · ENSIA G8-Team3</title>
+<title>Team Portfolio · ENSIA G8-Team3 (Responsive v2)</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
@@ -11,42 +11,45 @@
     --blob1:#7c5cff; --blob2:#23d5ab; --blob3:#ff7eb3;
   }
   *{box-sizing:border-box}
+  html,body{height:100%}
   body{
-    margin:0; height:100%; font-family:Poppins,system-ui,Segoe UI,Arial; color:var(--text);
+    margin:0; font-family:Poppins,system-ui,Segoe UI,Arial; color:var(--text);
     background: radial-gradient(1200px 800px at 10% -10%, #2e3366 0%, transparent 60%),
                 radial-gradient(900px 700px at 110% 10%, #2a4b63 0%, transparent 60%), var(--bg);
     overflow-x:hidden;
   }
+  /* Decorative blobs */
   .blobs{position:fixed; inset:0; filter:blur(60px); opacity:.35; z-index:-1}
   .blob{position:absolute; border-radius:50%; animation:float 20s ease-in-out infinite}
-  .blob:nth-child(1){width:360px; height:360px; top:-60px; left:-80px; background:var(--blob1);}
-  .blob:nth-child(2){width:420px; height:420px; bottom:-120px; right:-120px; background:var(--blob2); animation-delay:3s;}
-  .blob:nth-child(3){width:300px; height:300px; top:40%; left:65%; background:var(--blob3); animation-delay:6s;}
+  .blob:nth-child(1){width:min(36vw,360px); height:min(36vw,360px); top:-6vw; left:-8vw; background:var(--blob1)}
+  .blob:nth-child(2){width:min(42vw,420px); height:min(42vw,420px); bottom:-12vw; right:-12vw; background:var(--blob2); animation-delay:3s}
+  .blob:nth-child(3){width:min(30vw,300px); height:min(30vw,300px); top:40%; left:65%; background:var(--blob3); animation-delay:6s}
   @keyframes float{50%{transform:translate(40px,30px) scale(1.05)}}
+  @media (prefers-reduced-motion: reduce){
+    .blob{animation: none}
+  }
 
-  header{max-width:1100px; margin:48px auto 18px; padding:0 20px; display:flex; align-items:center; gap:14px}
+  header{max-width:1100px; margin:48px auto 18px; padding:0 16px; display:flex; align-items:center; gap:14px}
   .logo{width:44px; height:44px; border-radius:12px; background:linear-gradient(135deg,#7c5cff, #23d5ab);
         display:grid; place-items:center; color:white; font-weight:700; box-shadow:0 10px 30px #7c5cff55}
   .title h1{margin:0; font-size:clamp(20px,3vw,32px)}
   .title p{margin:4px 0 0; color:var(--muted); font-size:14px}
 
+  /* NEW: responsive, wrapping layout using CSS Grid */
   .grid{
-    display:flex; justify-content:center; align-items:stretch; gap:24px; flex-wrap:nowrap;
-    max-width:calc(5 * 320px + 4 * 24px); margin:40px auto 80px; padding:0 20px;
-  }
-  .grid .card{width:320px; height:360px; flex:0 0 320px;}
-
-  @media (max-width:1400px){
-    .grid{overflow-x:auto; -webkit-overflow-scrolling:touch; padding-bottom:8px;}
-    .grid::-webkit-scrollbar{height:8px}
-    .grid::-webkit-scrollbar-thumb{background:#ffffff33; border-radius:999px}
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(clamp(240px, 45vw, 320px), 1fr));
+    gap:24px;
+    max-width:1100px;
+    margin:40px auto 80px;
+    padding:0 16px;
   }
 
   .card{
     position:relative; border:1px solid var(--stroke); background:var(--card);
-    border-radius:16px; overflow:hidden; transition:.25s; backdrop-filter:blur(8px);
+    border-radius:16px; overflow:hidden; transition:transform .25s, box-shadow .25s; backdrop-filter:blur(8px);
   }
-  .card:hover{transform:translateY(-6px); box-shadow:0 14px 40px #0003;}
+  .card:hover{transform:translateY(-6px); box-shadow:0 14px 40px #0003}
   .cover{height:96px; background:linear-gradient(135deg,#7c5cff22,#23d5ab22)}
   .avatar{width:72px; height:72px; border-radius:16px; overflow:hidden; border:2px solid var(--stroke);
           position:absolute; top:56px; left:16px}
@@ -64,13 +67,28 @@
     font-size:12px; padding:6px 10px; border-radius:999px;
   }
   footer{text-align:center; color:var(--muted); padding:26px 16px 46px}
+
+  /* Small screens: tighten spacing and avatar */
+  @media (max-width:480px){
+    header{margin:28px auto 8px}
+    .avatar{width:60px; height:60px; top:58px}
+    .content{padding:52px 12px 12px}
+  }
+
+  /* Respect iOS/macOS safe areas */
+  @supports(padding:max(0px)){
+    header, .grid, footer{padding-left:max(16px, env(safe-area-inset-left)); padding-right:max(16px, env(safe-area-inset-right))}
+  }
+
+  /* Better tap targets */
+  a, button{min-height:40px}
 </style>
 </head>
 <body>
-  <div class="blobs"><div class="blob"></div><div class="blob"></div><div class="blob"></div></div>
+  <div class="blobs" aria-hidden="true"><div class="blob"></div><div class="blob"></div><div class="blob"></div></div>
 
   <header>
-    <div class="logo">TP</div>
+    <div class="logo" aria-hidden="true">TP</div>
     <div class="title">
       <h1>Team Portfolio</h1>
       <p>ENSIA • Software Engineering · GitHub Pages deployment</p>
@@ -80,44 +98,44 @@
   <main class="grid">
     <article class="card">
       <span class="badge">Team Leader</span>
-      <div class="cover"></div>
-      <div class="avatar"><img src="https://images.unsplash.com/photo-1544006659-f0b21884ce1d?q=80&w=400" alt=""></div>
+      <div class="cover" role="presentation"></div>
+      <div class="avatar"><img src="https://images.unsplash.com/photo-1544006659-f0b21884ce1d?q=80&w=400" alt="Portrait placeholder" loading="lazy" sizes="72px" /></div>
       <div class="content">
-        <div class="name"><a class="chip" href="leader-firstname-lastname.html">Abdennour Souaci</a></div>
+        <div class="name"><a class="chip" href="abdennour_souaci_profile.html">Abdennour Souaci</a></div>
         <div class="links">
-          <a class="chip" href="https://github.com/leaderusername" target="_blank">GitHub ↗</a>
-          <a class="chip" href="leader-firstname-lastname.html">Profile</a>
+          <a class="chip" href="https://github.com/AbdennourSouaci" target="_blank" rel="noopener">GitHub ↗</a>
+          <a class="chip" href="abdennour_souaci_profile.html">Profile</a>
         </div>
       </div>
     </article>
 
     <article class="card">
-      <div class="cover"></div>
-      <div class="avatar"><img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=400" alt=""></div>
+      <div class="cover" role="presentation"></div>
+      <div class="avatar"><img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=400" alt="Portrait placeholder" loading="lazy" sizes="72px" /></div>
       <div class="content">
         <div class="name"><a class="chip" href="member-two.html">Ahmed Fateh Guendouz</a></div>
         <div class="links">
-          <a class="chip" href="https://github.com/membertwo" target="_blank">GitHub ↗</a>
+          <a class="chip" href="https://github.com/membertwo" target="_blank" rel="noopener">GitHub ↗</a>
           <a class="chip" href="member-two.html">Profile</a>
         </div>
       </div>
     </article>
 
     <article class="card">
-      <div class="cover"></div>
-      <div class="avatar"><img src="https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?q=80&w=800" alt=""></div>
+      <div class="cover" role="presentation"></div>
+      <div class="avatar"><img src="https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?q=80&w=800" alt="Portrait placeholder" loading="lazy" sizes="72px" /></div>
       <div class="content">
         <div class="name"><a class="chip" href="member-three.html">Aymene Elhabiri</a></div>
         <div class="links">
-          <a class="chip" href="https://github.com/memberthree" target="_blank">GitHub ↗</a>
+          <a class="chip" href="https://github.com/memberthree" target="_blank" rel="noopener">GitHub ↗</a>
           <a class="chip" href="member-three.html">Profile</a>
         </div>
       </div>
     </article>
 
     <article class="card">
-      <div class="cover"></div>
-      <div class="avatar"><img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=800" alt=""></div>
+      <div class="cover" role="presentation"></div>
+      <div class="avatar"><img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=800" alt="Portrait placeholder" loading="lazy" sizes="72px" /></div>
       <div class="content">
         <div class="name"><a class="chip" href="asma-lassel.html">Asma Lassel</a></div>
         <div class="links">
@@ -128,8 +146,8 @@
     </article>
 
     <article class="card">
-      <div class="cover"></div>
-      <div class="avatar"><img src="https://images.unsplash.com/photo-1518773553398-650c184e0bb3?q=80&w=800" alt=""></div>
+      <div class="cover" role="presentation"></div>
+      <div class="avatar"><img src="https://images.unsplash.com/photo-1518773553398-650c184e0bb3?q=80&w=800" alt="Portrait placeholder" loading="lazy" sizes="72px" /></div>
       <div class="content">
         <div class="name"><a class="chip" href="member-five.html">Douaa Zaibak</a></div>
         <div class="links">
