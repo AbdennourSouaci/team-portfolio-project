@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Guendouz Ahmed Fateh · Profile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root{ --bg:#0b1020; --paper:#0f1530; --muted:#94a3b8; --ink:#e2e8f0; --chip:#1f2a44; --stroke:#1d2542; }
+  body{
+    margin:0;
+    background:radial-gradient(900px 500px at -10% -10%, #1f2551 0%, transparent 55%), var(--bg);
+    color:var(--ink);
+    font-family:Inter, system-ui, Segoe UI, Arial;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:100vh;
+    padding:20px;
+  }
+  a{color:#a5b4fc; text-decoration:none}
+  .wrap{
+    max-width:1050px;
+    width:90%;
+    background:var(--paper);
+    border:1px solid var(--stroke);
+    border-radius:18px;
+    padding:24px;
+    display:grid;
+    grid-template-columns:320px 1fr;
+    gap:24px;
+  }
+  @media (max-width:900px){ .wrap{grid-template-columns:1fr} }
+
+  .side{
+    background:var(--paper);
+    border-radius:18px;
+    padding:22px;
+    text-align:center;
+  }
+  .avatar{ width:120px; height:120px; border-radius:18px; overflow:hidden; background:#1a2847; border:2px solid #2b3565; margin:auto; display:flex; align-items:center; justify-content:center; font-size:48px; font-weight:800; color:#a5b4fc }
+  .avatar img{ width:100%; height:100%; object-fit:cover }
+  .name{ font-size:26px; font-weight:800; margin:14px 0 4px }
+  .role{ color:var(--muted); margin-bottom:12px }
+  .chips{ display:flex; flex-wrap:wrap; justify-content:center; gap:8px; margin-top:16px }
+  .chip{ padding:8px 12px; font-size:13px; border-radius:999px; background:var(--chip); border:1px solid var(--stroke) }
+  .main{ display:grid; gap:18px; align-content:start }
+  .card{
+    background:var(--paper);
+    border:1px solid var(--stroke);
+    border-radius:18px;
+    padding:22px;
+  }
+  h2{ margin:0 0 10px; font-size:18px; letter-spacing:.3px }
+  .card p{ line-height:1.7; color:var(--muted) }
+  .card ul{ margin:8px 0 0; padding-left:20px; line-height:1.8 }
+  .card ul li{ margin-bottom:8px; color:var(--muted) }
+  .card ul li b{ color:var(--ink); font-weight:600 }
+  .links{
+    margin-top:16px;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+  }
+  .links a{
+    display:block;
+    border:1px solid var(--stroke);
+    background:#131b3a;
+    padding:10px 12px;
+    border-radius:10px;
+    text-align:center;
+    transition:background 0.2s;
+  }
+  .links a:hover{
+    background:#1a2545;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <aside class="side">
+      <div class="avatar">GA</div>
+      <div class="name">Guendouz Ahmed Fateh</div>
+      <div class="role">Software Engineering Student</div>
+      <div class="chips">
+        <span class="chip">Rust</span>
+        <span class="chip">C++</span>
+        <span class="chip">Python</span>
+        <span class="chip">JavaScript</span>
+        <span class="chip">Node.js</span>
+        <span class="chip">React</span>
+        <span class="chip">Next.js</span>
+        <span class="chip">Tauri</span>
+        <span class="chip">Electron</span>
+        <span class="chip">Qt</span>
+        <span class="chip">HTML/CSS</span>
+        <span class="chip">Tailwind</span>
+        <span class="chip">Nim</span>
+        <span class="chip">Git & GitHub</span>
+      </div>
+      <div class="links">
+        <a href="https://github.com/gojosatorusu" target="_blank" rel="noopener">GitHub ↗</a>
+        <a href="index.html">← Back to Team</a>
+      </div>
+    </aside>
+
+    <main class="main">
+      <section class="card">
+        <h2>About Me</h2>
+        <p>I am a software engineering student at ENSIA with a strong passion for cybersecurity and machine learning. I enjoy experimenting with new technologies and exploring how AI can be applied to solve real-world security challenges. My goal is to develop innovative solutions that combine these fields to create safer and smarter systems.</p>
+      </section>
+
+      <section class="card">
+        <h2>Technical Skills</h2>
+        <ul>
+          <li><b>Rust</b> – Building high-performance, memory-safe systems and desktop applications.</li>
+          <li><b>C++</b> – Strong foundation in low-level programming and system optimization.</li>
+          <li><b>Python</b> – Skilled in machine learning, security automation, and rapid prototyping.</li>
+          <li><b>JavaScript/Node.js</b> – Experienced in full-stack development and backend services.</li>
+          <li><b>React & Next.js</b> – Creating modern, responsive web applications with server-side rendering.</li>
+          <li><b>Tauri & Electron</b> – Developing cross-platform desktop applications with web technologies.</li>
+          <li><b>Qt</b> – Building native desktop applications with rich user interfaces.</li>
+          <li><b>Tailwind CSS</b> – Rapid UI development with utility-first CSS framework.</li>
+          <li><b>Nim</b> – Exploring efficient, expressive system programming.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Areas of Interest</h2>
+        <ul>
+          <li><b>Cybersecurity</b> – Exploring vulnerability analysis, secure coding practices, and network security.</li>
+          <li><b>Machine Learning</b> – Experimenting with AI models for security applications and threat detection.</li>
+          <li><b>Desktop Applications</b> – Building cross-platform tools with modern frameworks like Tauri, Electron and Qt.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Current Projects</h2>
+        <ul>
+          <li><b>Mobile App</b> – Creating and Designing A mobile App for rating stuff</li>
+          <li><b>Data Mining</b> – Implementing machine learning models for anomaly detection...</li>
+          <li><b>Cross-platform Desktop App</b> – Creating a Laboratory Managment tool with AI Agents Support using Tauri and React.</li>
+        </ul>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
